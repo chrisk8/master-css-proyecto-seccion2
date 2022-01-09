@@ -1,0 +1,533 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/****FUENTES****/
+@font-face {
+    font-family: TebuchetMs;
+    src: url(../fonts/TrebuchetMS.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: BebasNeue;
+    src: url(../fonts/BebasNeue.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+/*Para importar WebSymbols*/
+@font-face {
+    font-family: icons;
+    src: url(../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular) format(svg),
+         url(../fonts/websymbols-regular-webfont.eot);
+    src: url(../fonts/websymbols-regular-webfont.eot?#iefix) format("embedded-opentype"),
+         url(../fonts/websymbols-regular-webfont.ttf) format("truetype"),
+         url(../fonts/websymbols-regular-webfont.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/****ESTILOS GENERALES****/
+body {
+    background-image: url(../images/pattern.png);
+}
+
+.wrap {
+    width: 1250px;
+    margin: 0px auto;
+}
+
+.gear,
+.icon {
+    font-family: icons;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+/****HEADER****/
+#header {
+    width: 100%;
+    height: 70px;
+    background-color: #000000;
+    font-family: BebasNeue;
+    color: white;
+}
+#logo {
+    float: left;
+    width: 200px;
+    margin-top: 8px;  
+    margin-left: 20px;
+    background-color: #37BCF9;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 300ms;   
+}
+#logo .gear{
+    display: block;
+    float: left;
+    font-size: 30px;
+    margin-top: 8px;
+    margin-left: 26px;
+}
+#logo h3 {
+    display: block;
+    float: right;
+    margin-top: 5px;
+    font-size: 40px;
+    transition: all 300ms;
+    margin-right: 65px;
+}
+
+/****MENU****/
+#menu {
+    float: right;
+    /* border: 1px solid white; */
+    height: 70px;
+    background: transparent;
+}
+#menu ul li {
+    display: inline-block;
+    margin: 0px 20px 0px 20px;
+    list-style: none;
+    letter-spacing: 1px;
+    font-size: 25px;
+    line-height: 70px;
+}
+#menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms;
+}
+#menu ul li a:hover{
+    color: #37BCF9;
+    transform: scale(1.35, 1.35);
+}
+
+/****BANNER****/
+#banner {
+    width: 95.6%;
+    height: 100px;
+    margin: 20px auto;
+    border: 10px solid white;
+    box-shadow: 0px 0px 3px gray;
+    background-image: url(../images/bakbaner.png);
+    background-position: -200px, -200px;
+    text-align: center;
+}
+#banner h1 {
+    display: block;
+    width: 850px;
+    margin: 27px auto;
+    font-family: BebasNeue;
+    color: white;
+    font-size: 45px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    text-shadow: 6px 6px 3px black;
+}
+
+/****TARJETAS****/
+.card {
+    width: 205px;
+    height: 305px;
+    margin: 22px;
+    margin-top: 40px;
+    float: left;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 4px #ddd;
+    background: white;
+    cursor: pointer;
+}
+.card:last-child {
+    margin-right: 0px;
+}
+.card .icon {
+    display: block;
+    width: 100%;
+    height: 130px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 50px;
+    line-height: 130px;
+}
+.card .category {
+    width: 100%;
+    height: 40px;
+    margin: 0px auto;
+    font-family: TebuchetMs;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #00538C;
+}
+.card .description {
+    width: 100%;
+    font-family: TebuchetMs;
+    text-align: center;
+    color: #156ba5;
+}
+
+/****BARRA LATERAL****/
+#sidebar {
+    width: 300px;
+    min-height: 1200px;
+    margin: 20px;
+    float: right;
+    font-family: TebuchetMs;
+}
+
+aside h3 {
+    display: block;  /*Para manipularlo como se desee*/
+    width: auto;
+    height: 45px;
+    margin: 15px 0px 15px 0px;
+    padding-left: 15px;
+    background-image: url(../images/pxgray.png), white;
+    background-color: #E5E5E5;
+    box-shadow: 1px 2px 3px #393D3F, 2px 3px 0px #393D3F, 3px 4px 0px #393D3F;
+    font-family: BebasNeue;
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    line-height: 45px;
+}
+#sidebar h3:first-child {
+     margin-top: 0px;
+}
+
+#search {
+    width: 90%;
+    height: 30px;
+    margin: 10px auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 1px 4px #CDCDCD inset;
+}
+#search input[type="text"] {
+    width: 85%;
+    height: 30px;
+    padding-left: 5px;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 2px 1px 4px #CDCDCD inset;
+    border: none;
+    color: #ccc;
+    transition: all 300ms;
+}
+#search input[type="text"]:focus {
+    color: #00538C;
+}
+#search input[type="button"],
+#search input[type="submit"] {
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    border-left: 1px solid #ccc;
+    color: #555;
+    padding-left: 6px;
+}
+
+.aside-box {
+    width: 85%;
+    height: 240px;
+    margin-top: 20px;
+    margin: 0px auto;
+    padding-top: 2px;
+    background-color: white;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.3),
+                3px 0px 2px rgba(0, 0, 0, 0.3),
+                0px -3px 4px rgba(0, 0, 0, 0.3) inset,
+                -3px 0px 2px rgba(0, 0, 0, 0.3) inset;
+
+}
+#login input[type="email"],
+#login input[type="password"] {
+    display: block;
+    width: 80%;
+    height: 30px;
+    margin: 0px auto;
+    margin-top: 20px;
+    padding-left: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 1px 4px #CDCDCD inset;
+    color: #ccc;
+    transition: all 300ms;
+}
+#login input[type="email"]:focus,
+#login input[type="password"]:focus {
+    box-shadow: 1px 1px 2px #37BCF9 inset, 
+                0px -1px 2px #37BCF9 inset;
+    outline: none;
+    color: #00538C;
+}
+
+#login #user,
+#login #password {
+    position: absolute;
+    display: block;
+    text-align: center;
+    height: 30px;
+    margin: 6px 0px 0px 18px;
+    
+}
+#login #password {
+    margin-top: 25px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+#login input[type="submit"],
+#login input[type="reset"],
+#login input[type="button"],
+#login button {
+    width: 100px;
+    height: 35px;
+    margin: 20px 0px 20px 20px;
+    border: 1px solid #37BCF9;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-family: TebuchetMs;
+    font-size: 15px;
+    color: white;
+    font-weight: lighter;
+    /*gradiant*/
+    background: hsla(196, 63%, 50%, 1);
+    background: radial-gradient(circle, hsla(196, 63%, 50%, 1) 0%, hsla(205, 100%, 18%, 1) 100%);    
+    background: -moz-radial-gradient(circle, hsla(196, 63%, 50%, 1) 0%, hsla(205, 100%, 18%, 1) 100%);    
+    background: -webkit-radial-gradient(circle, hsla(196, 63%, 50%, 1) 0%, hsla(205, 100%, 18%, 1) 100%);  
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#30A6D0", endColorstr="#00355B", GradientType=1 );
+    /*fin grandiant*/
+    transition: all 350 ms;
+}
+#login input[type="submit"]:hover,
+#login input[type="reset"]:hover,
+#login input[type="button"]:hover,
+#login button:hover {
+    box-shadow: 2px 2px 4px gray;
+    transform: scale(1.03, 1.03);
+}
+#login a {
+    display: block;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+    color: #555;
+}
+#login a:hover {
+    text-decoration: underline;
+    color: #37BCF9;
+}
+#login a :visited {
+    color: red;
+}
+#social a {
+    display: block;
+    margin: 15px 0px 15px 15px;
+    font-size: 30px;
+    color: #393D3F;
+    text-decoration: none;
+}
+
+/****SECCION DE ARTICULOS****/
+#articles {
+    width: 820px;
+    float: right;
+    margin-right: 70px;
+}
+#articles h2 {
+    display: block;
+    width: 100%;
+    height: 75px;
+    margin: 0px auto;
+    margin: 20px 0px 40px 0px;
+    text-align: center;
+    font-size: 37px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    font-family: BebasNeue;
+    line-height: 75px;
+    background: url(../images/pxgray.png), white;
+    box-shadow: 1px 2px 3px #393D3F, 2px 3px 0px #393D3F, 3px 4px 0px #393D3F;
+}
+#articles article {
+    width: 98%;
+    height: auto;
+    margin: 40px auto;
+    padding: 10px;
+    background: white;
+    color: black;
+    font-family: TebuchetMs;
+    border: 1px solid #ccc;
+}
+#articles article h4 {
+    display: block;
+    font-size: 23px;
+    margin: 3px;
+}
+#articles article h4 a {
+    text-decoration: none;
+    color: #00538C;
+}
+#articles article h4 a:hover {
+    color: #37BCF9;
+    text-decoration: underline;
+}
+#articles .data {
+    float: right;
+    margin: -10px;
+    height: 30px;
+    background: #393D3F;
+    color: white;
+    padding: 4px;
+    border-radius: 0px 0px 0px 5px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 30px;
+}
+#articles .data span {
+    margin: 6px;
+}
+#articles article p {
+    font-size: 15px;
+    margin: 10px 0px 10px 0px;
+    text-align: justify;
+}
+#articles article a {
+    text-decoration: none;
+    color: #00538C;
+}
+#articles article a:hover {
+    color: #37BCF9;
+    text-decoration: underline;
+}
+#blog {
+    width: 100%;
+    height: 100px;
+    margin: 60px 0px 40px 0px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 4px #ccc;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+}
+#blog a {
+    display: block;
+    text-decoration: none;
+    color: #00538C;
+    font-family: BebasNeue;
+    font-size: 40px;
+    /* text-transform: uppercase; */
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+#blog a:hover {
+    color: #37BCF9;
+    text-decoration: underline;
+}
+
+/****FOOTER****/
+#footer {
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
+    /* padding: 30px; */
+    background: black;
+    color: white;
+    font-family: TebuchetMs;
+
+}
+#footer #menu_footer,
+#footer section {
+    float: left;
+    margin: 40px;
+    width: 320px;
+    height: 380px;
+    text-align: left;
+    
+}
+#footer nav {
+    width: 30%;
+    height: 380px;
+    font-family: TrebuchetMs;
+    text-align: center;
+    
+}
+#footer h3 {
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: url(../images/pxgray.png) white;
+    font-family: BebasNeue;
+    text-align: center;  
+    color: black;
+    font-size: 35px;
+    line-height: 50px;
+    letter-spacing: 2px;
+}
+#footer nav ul {
+    width: 100%;
+    height: 300px;
+    /* margin-top: 30px; */
+    text-align: left;
+}
+#footer nav ul li {
+    width: 80%;
+    margin: 15px 0px 15px 25px;
+    padding: 10px;
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    /* border-top: 1px solid #ccc; */
+    border-bottom: 1px solid #ccc;
+
+}
+#footer nav ul li a {
+    text-decoration: none;
+    color: #00538C; 
+    transition: all 350ms;
+}
+#footer nav ul  li:first-child {
+    border: none; 
+}
+#footer nav ul li:nth-child(2) {
+    /* border: none; */
+    /* border-bottom: 1px solid #ccc; */
+}
+#footer nav ul  li a:hover {
+    color: #37BCF9;
+}
+#location iframe{
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px gray;
+}
+#footer img {
+    margin-bottom: 15px;
+}
+#info img {
+    margin-left: 35px;
+}
+#browsers img{
+    width: 45px;
+    margin-left: 0px;
+}
+
+
