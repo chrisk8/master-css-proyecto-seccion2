@@ -504,10 +504,7 @@ aside h3 {
 #footer nav ul  li:first-child {
     border: none; 
 }
-#footer nav ul li:nth-child(2) {
-    /* border: none; */
-    /* border-bottom: 1px solid #ccc; */
-}
+
 #footer nav ul  li a:hover {
     color: #37BCF9;
 }
