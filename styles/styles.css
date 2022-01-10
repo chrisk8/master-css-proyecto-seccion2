@@ -66,7 +66,13 @@ body {
     letter-spacing: 1px;
     cursor: pointer;
     overflow: hidden;
-    transition: all 300ms;   
+    transition: all 150ms;   
+}
+#logo:hover {
+    background-color: rgba(58, 54, 54, 0.247);
+    color: #37BCF9;
+    border-radius: 5px;
+    border: 3px solid #00538C;
 }
 #logo .gear{
     display: block;
@@ -74,6 +80,27 @@ body {
     font-size: 30px;
     margin-top: 8px;
     margin-left: 26px;
+    transition: all 350ms;   
+    animation: rotate 4s linear infinite; /*Gira el engrane*/
+}
+@keyframes rotate { /*Animacion para girar el engrane*/
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }    
+}
+#logo:hover .gear{ /*Aparece engrane desde arriba*/
+    animation: fromBellow 1s;
+}
+@keyframes fromBellow {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0px);
+    }   
 }
 #logo h3 {
     display: block;
@@ -82,6 +109,17 @@ body {
     font-size: 40px;
     transition: all 300ms;
     margin-right: 65px;
+}
+#logo:hover h3 {  /*Aparece texto desde la derecha*/
+    animation: fromRigth 1s;
+}
+@keyframes fromRigth {
+    from {
+        transform: translateX(200px);
+    }
+    to {
+        transform: translateX(0px);
+    }
 }
 
 /****MENU****/
@@ -120,6 +158,19 @@ body {
     background-image: url(../images/bakbaner.png);
     background-position: -200px, -200px;
     text-align: center;
+    overflow: hidden;
+    animation: move-bg 10s linear;
+}
+@keyframes move-bg {  /*Animacion para mover el background del banner*/
+    0% {
+        background-position: 0px 0px;
+    }
+    50% {
+        background-position: -200px -200px;
+    }
+    100% {
+        background-position: 0px 0px;
+    }
 }
 #banner h1 {
     display: block;
@@ -131,6 +182,29 @@ body {
     letter-spacing: 2px;
     font-weight: normal;
     text-shadow: 6px 6px 3px black;
+    animation: show-text 5s linear;
+}
+@keyframes show-text {  /*Animacion para el texto del banner*/
+    0% {
+        transform: translateX(-600%) scale(4, 4);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(600%) scale(3, 3);
+        opacity: 1;
+    }
+    75% {
+        transform: translateX(-600%) scale(5, 5);
+        text-shadow: none;
+        color: transparent;
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%) scale(1, 1);
+        color: white;
+        text-shadow: 6px 6px 3px black;
+        opacity: 1;
+    }
 }
 
 /****TARJETAS****/
@@ -145,6 +219,10 @@ body {
     box-shadow: 2px 2px 4px #ddd;
     background: white;
     cursor: pointer;
+    transition: all 300ms;
+}
+.card:hover {
+    background-color: black;
 }
 .card:last-child {
     margin-right: 0px;
@@ -157,6 +235,20 @@ body {
     text-align: center;
     font-size: 50px;
     line-height: 130px;
+    transition: all 300ms;
+}
+.card:hover .icon {
+    color: #37BCF9;
+    font-size: 70px;
+    animation: show-card-icon 500ms linear;
+}
+@keyframes show-card-icon {
+    from {
+        transform: translateY(-200%);
+    }
+    to {
+        transform: translateY(0%);        
+    }
 }
 .card .category {
     width: 100%;
@@ -167,12 +259,40 @@ body {
     font-weight: bold;
     text-align: center;
     color: #00538C;
+    transition: all 300ms;
+}
+.card:hover .category {
+    color: white;
+    animation: show-category 600ms linear;
+}
+@keyframes show-category {
+    from {
+        transform: translateY(-300%);
+        color: black;
+    }
+    to {
+        transform: translateY(0%);
+    }
 }
 .card .description {
     width: 100%;
     font-family: TebuchetMs;
     text-align: center;
     color: #156ba5;
+    transition: all 300ms;
+}
+.card:hover .description {
+    color: white;
+    animation: show-description 500ms linear;
+}
+@keyframes show-description {
+    from {
+        transform: translateX(-300%);
+        color: black;
+    }
+    to {
+        transform: translateX(0%);
+    }
 }
 
 /****BARRA LATERAL****/
@@ -340,6 +460,28 @@ aside h3 {
     color: #393D3F;
     text-decoration: none;
 }
+#social .overlay {
+    display: block;
+    height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 1px #ccc;
+    border: 3px solid white;
+    box-shadow: 0px 0px 4px #ccc;
+    background: #f4f7fe;
+    position: absolute;
+    padding: 5px;
+    margin-left: 70px;
+    margin-top: -48px;
+    transform: translateX(-80%);
+    opacity: 0;
+    transition: all 400ms;
+}
+#social div:hover .overlay {
+    opacity: 1;
+    transform: translateX(0%);
+}
 
 /****SECCION DE ARTICULOS****/
 #articles {
@@ -422,6 +564,7 @@ aside h3 {
     text-align: center;
     line-height: 100px;
     cursor: pointer;
+    transition: all 1s;
 }
 #blog a {
     display: block;
@@ -432,10 +575,44 @@ aside h3 {
     /* text-transform: uppercase; */
     font-weight: bold;
     letter-spacing: 3px;
+    transition: all 1s;
+}
+#blog:hover {
+    background: #333;
+    border: 10px solid #37BCF9;
+    border-radius: 240px;
+    box-shadow: 0px 0px 10px gray;
+    animation: change-border 10s infinite linear;
+}
+@keyframes change-border {  /*Animacion para cambiar el color del borde del BLOG*/
+    0% {
+        border: 10px solid #37BCF9;
+    }
+    20% {
+        border: 10px solid yellow;
+    }
+    40% {
+        border: 10px solid green;
+    }
+    60% {
+        border: 10px solid purple;
+    }
+    80% {
+        border: 10px solid  red;
+    }
+    100% {
+        border: 10px solid #37BCF9; 
+    }
+    
 }
 #blog a:hover {
-    color: #37BCF9;
-    text-decoration: underline;
+    text-shadow: 1px 1px 1px black,
+                 1px 2px 1px black,
+                 1px 3px 1px black,
+                 1px 4px 1px black,
+                 1px 5px 1px black,
+                 1px 6px 1px black;
+    color: white;
 }
 
 /****FOOTER****/
@@ -492,11 +669,10 @@ aside h3 {
     font-size: 25px;
     letter-spacing: 2px;
     font-weight: bold;
-    /* border-top: 1px solid #ccc; */
     border-bottom: 1px solid #ccc;
-
 }
 #footer nav ul li a {
+    display: block;
     text-decoration: none;
     color: #00538C; 
     transition: all 350ms;
@@ -506,7 +682,8 @@ aside h3 {
 }
 
 #footer nav ul  li a:hover {
-    color: #37BCF9;
+    padding-left: 40px;
+    color: white;
 }
 #location iframe{
     width: 100%;
