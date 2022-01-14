@@ -298,7 +298,7 @@ body {
 /****BARRA LATERAL****/
 #sidebar {
     width: 300px;
-    min-height: 1200px;
+    min-height: 1045px;
     margin: 20px;
     float: right;
     font-family: TebuchetMs;
@@ -310,8 +310,7 @@ aside h3 {
     height: 45px;
     margin: 15px 0px 15px 0px;
     padding-left: 15px;
-    background-image: url(../images/pxgray.png), white;
-    background-color: #E5E5E5;
+    background: url(../images/pxgray.png), white;
     box-shadow: 1px 2px 3px #393D3F, 2px 3px 0px #393D3F, 3px 4px 0px #393D3F;
     font-family: BebasNeue;
     font-size: 30px;
@@ -486,8 +485,8 @@ aside h3 {
 /****SECCION DE ARTICULOS****/
 #articles {
     width: 820px;
-    float: right;
-    margin-right: 70px;
+    float: left;
+    /* margin-right: 70px; */
 }
 #articles h2 {
     display: block;
@@ -505,7 +504,7 @@ aside h3 {
     box-shadow: 1px 2px 3px #393D3F, 2px 3px 0px #393D3F, 3px 4px 0px #393D3F;
 }
 #articles article {
-    width: 98%;
+    width: 97%;
     height: auto;
     margin: 40px auto;
     padding: 10px;
@@ -602,8 +601,7 @@ aside h3 {
     }
     100% {
         border: 10px solid #37BCF9; 
-    }
-    
+    } 
 }
 #blog a:hover {
     text-shadow: 1px 1px 1px black,
@@ -633,15 +631,10 @@ aside h3 {
     width: 320px;
     height: 380px;
     text-align: left;
-    
-}
-#footer nav {
-    width: 30%;
-    height: 380px;
     font-family: TrebuchetMs;
-    text-align: center;
-    
+    text-align: center;   
 }
+
 #footer h3 {
     display: block;
     width: 100%;
@@ -696,9 +689,7 @@ aside h3 {
 #footer img {
     margin-bottom: 15px;
 }
-#info img {
-    margin-left: 35px;
-}
+
 #browsers img{
     width: 45px;
     margin-left: 0px;
